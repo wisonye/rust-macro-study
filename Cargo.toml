@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "my-macro-lib",
+    "my-macro-consumer",
+]
