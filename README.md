@@ -2,13 +2,13 @@
 
 ## Project structure
 
-We need `workspace` in this study project. In the root folder, we got no source code expect a **`Cargo.toml`** file which represents the `workspace`.
+We use `workspace` in this study project. In the root folder, we got no source code except a **`Cargo.toml`** file which represents the `workspace`.
 
 And we got 2 `packages` inside the `workspace`:
 
 - `my_macro_lib` - It's a `lib` which including the exported customized macro.
 
-- `my_macro_consumer` - c
+- `my_macro_consumer` - It's a `binary` which importing and consuming the customized macro.
 
 ```rust
 [workspace]
