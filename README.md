@@ -16,6 +16,65 @@
 </br>
 <hr>
 
+## How `macro` works:
+
+Basically, if you write your own `macro`, you need to provide some sort of `macro patterns` which means If your macro get called, then then `matched patterns code` will `expand` to the source code position you called.
+
+For example we got a customized macro `impl_login` below:
+
+```rust
+/// The macro which can implement the `Login` trait.
+#[macro_export]
+macro_rules! impl_login {
+
+    //
+    // Pass in a `Struct` type name, we implement the `Login` trait
+    // for it automatic.
+    //
+    ($target_struct: ty) => {{
+        impl Login for $target_struct {
+            fn login(&self, user_name: &str, password: &str) -> bool {
+                println!(
+                    "login method get called with user_name: '{}' and password: '{}'",
+                    user_name, password
+                );
+                true
+            }
+        }
+    }};
+}    
+```    
+
+When u call it like this:
+
+```rust
+struct UserService {}
+
+impl_login!(UserService);
+```
+
+It actually will become this:
+
+```rust
+struct UserService {}
+
+{
+    impl Login for UserService {
+        fn login(&self, user_name: &str, password: &str) -> bool {
+            println!(
+                "login method get called with user_name: '{}' and password: '{}'",
+                user_name, password
+            );
+            true
+        }
+    }
+}
+```
+
+
+</br>
+<hr>
+
 ## Add `cargo-expand` for doing a quick debug to our customized macro
 
 1. Install
