@@ -3,8 +3,14 @@ pub trait Login {
     fn login(&self, user_name: &str, password: &str) -> bool;
 }
 
-///
+/// The macro which can implement the `Login` trait.
+#[macro_export]
 macro_rules! impl_login {
+
+    //
+    // Pass in a `Struct` type name, we implement the `Login` trait
+    // for it automatic.
+    //
     ($target_struct: ty) => {{
         impl Login for $target_struct {
             fn login(&self, user_name: &str, password: &str) -> bool {

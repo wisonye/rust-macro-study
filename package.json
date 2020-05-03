@@ -5,11 +5,11 @@
   "scripts": {
     "//1": "--------------------------- Dev for Lib -----------------------------------------",
     "run_lib_build": "clear && cargo build --lib",
-    "start-lib": "nodemon --watch my-macro-lib/src --ext rs --exec 'npm run run_lib_build'",
+    "start-lib": "nodemon --watch my_macro_lib/src --ext rs --exec 'npm run run_lib_build'",
 
     "//2": "--------------------------- Dev for Consumer -------------------------------------",
-    "run_consumer_build": "clear && cargo run --bin my-macro-consumer",
-    "start-consumer": "nodemon --watch my-macro-consumer/src --ext rs --exec 'npm run run_consumer_build'"
+    "run_consumer_build": "clear && cargo run --bin my_macro_consumer",
+    "start-consumer": "nodemon --watch my_macro_consumer/src --ext rs --exec 'npm run run_consumer_build'"
   },
   "keywords": [],
   "author": "",
