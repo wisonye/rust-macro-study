@@ -1,5 +1,27 @@
 # Learn show to write customized `macro` in `Rust`
 
+## Project structure
+
+We need `workspace` in this study project. In the root folder, we got no source code expect a **`Cargo.toml`** file which represents the `workspace`.
+
+And we got 2 `packages` inside the `workspace`:
+
+- `my_macro_lib` - It's a `lib` which including the exported customized macro.
+
+- `my_macro_consumer` - c
+
+```rust
+[workspace]
+
+members = [
+    "my_macro_lib",
+    "my_macro_consumer",
+]
+```
+
+</br>
+<hr>
+
 ## How to run 
 
 1. Run `npm install` for preparing the `hot-load` feature.
